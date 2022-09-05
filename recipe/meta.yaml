@@ -1,5 +1,5 @@
 {% set name = "tintx" %}
-{% set version = "2022.9.4" %}
+{% set version = "2022.9.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tintx-{{ version }}.tar.gz
-  sha256: 8630fb3690a6be0032c40a96b0934ee54719a6de233985fb6d96dd2d297172c6
+  sha256: 03e47ac9c96ffdfd5bb8b8d9cca746f956db9e2c92baefcdde714772c1562948
 
 build:
   entry_points:
