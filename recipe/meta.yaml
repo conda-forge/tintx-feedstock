@@ -1,5 +1,5 @@
 {% set name = "tintx" %}
-{% set version = "2022.9.5" %}
+{% set version = "2022.12.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,35 +7,37 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tintx-{{ version }}.tar.gz
-  sha256: 03e47ac9c96ffdfd5bb8b8d9cca746f956db9e2c92baefcdde714772c1562948
+  sha256: 6fa4868b61c558c7f2c300ac6409ea381c6dcf9470586683c67b0e3b113b8b89
 
 build:
   entry_points:
     - tintx = tintx.cli:tintx
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
-    - python >=3.7
     - pip
-  run:
     - python >=3.7
+  run:
     - cartopy
-    - click
     - cftime
+    - click
     - dask-core
-    - ffmpeg
-    - pandas
-    - pytables
-    - numpy
-    - scipy
-    - netcdf4
+    - geopandas
     - matplotlib-base
-    - xarray
+    - netcdf4
+    - numpy
+    - pandas
+    - python >=3.7
+    - rasterio
+    - scipy
+    - shapely
+    - pytables
     - tqdm
     - typing-extensions
+    - xarray
 
 test:
   imports:
