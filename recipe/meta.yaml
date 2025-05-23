@@ -15,7 +15,7 @@ build:
     - tintx = tintx.cli:tintx
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -50,6 +50,7 @@ test:
   requires:
     - python {{ python_min }}
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/antarcticrainforest/tintX
