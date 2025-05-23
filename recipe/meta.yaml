@@ -14,15 +14,15 @@ build:
     - tintx = tintx.cli:tintx
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 2
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - flit-core >=3.2
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - cartopy
     - cftime
     - click
@@ -47,7 +47,9 @@ test:
     - pip check
     - tintx --help
   requires:
+    - python {{ python_min }}
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/antarcticrainforest/tintX
@@ -59,3 +61,4 @@ about:
 extra:
   recipe-maintainers:
     - antarcticrainforest
+    - kmuehlbauer
