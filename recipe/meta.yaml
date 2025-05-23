@@ -1,5 +1,5 @@
 {% set name = "tintx" %}
-{% set version = "2024.8.1" %}
+{% set version = "2025.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tintx-{{ version }}.tar.gz
-  sha256: 09ca508af9d8df8d4f39f2c06a4570593a908f09a091b1ecb131149ac9a5e53f
+  sha256: 596984c692c87d6128cc576313439492edc1bd481f3d2104354a3ca32e0c4d2b
 
 build:
   entry_points:
@@ -18,11 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - flit-core >=3.2
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - cartopy
     - cftime
     - click
@@ -47,6 +47,7 @@ test:
     - pip check
     - tintx --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
@@ -59,3 +60,4 @@ about:
 extra:
   recipe-maintainers:
     - antarcticrainforest
+    - kmuehlbauer
